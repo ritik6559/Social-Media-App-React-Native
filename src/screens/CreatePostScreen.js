@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, TextInput, Button } from "react-native";
 import { useState } from "react";
 import { Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import { useNavigation } from "@react-navigation/native";
 
 const user = {
   id: "u1",
@@ -10,7 +11,11 @@ const user = {
   name: "Vadim Savin",
 };
 
+
+
 const CreatePostScreen = () => {
+
+  const navigation = useNavigation();
 
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
@@ -19,6 +24,7 @@ const CreatePostScreen = () => {
     console.warn("Post", caption);
     setCaption("");
     setImage(null);
+    navigation.goBack();
   }
 
   const pickImage = async () => {

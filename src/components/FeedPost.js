@@ -53,7 +53,7 @@ const FeedPost = ({post} ) => {
 
 const styles = StyleSheet.create({
   post: {
-    marginVertical: 15,
+    marginVertical: 0,
     backgroundColor: "white",
     width: "100%",
   },

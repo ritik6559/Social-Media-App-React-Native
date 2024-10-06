@@ -1,7 +1,5 @@
 import { StyleSheet, View, StatusBar } from 'react-native';
-import CreatePostScreen from './src/screens/CreatePostScreen';
-import Navigator from './src/navigation';
-
+import Navigator from './src/navigation/index';
 
 export default function App() {
   return (
@@ -15,9 +13,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgray',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
   },
 })
