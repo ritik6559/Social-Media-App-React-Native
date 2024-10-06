@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import  LikeImage  from '../../assets/images/like.png';
 import {
   Entypo,
@@ -6,14 +6,20 @@ import {
   FontAwesome5,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
+import { useNavigation} from '@react-navigation/native';
 
 
 const FeedPost = ({post} ) => {
+
+  const navigation = useNavigation();
+
   return (
       <View style={styles.post}>  
         {/* Header */}
         <View style={styles.header}> 
+          <Pressable onPress={() => navigation.navigate("Profile", {id: post.User.id})}>
           <Image source={{ uri: post.User.image }} style={styles.profileImage} />
+          </Pressable>
           <View style={styles.userInfo}>
           <Text style={styles.userName}>{post.User.name}</Text>
           <Text style={styles.createdAt}>{post.createdAt}</Text>
